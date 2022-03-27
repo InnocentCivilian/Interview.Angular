@@ -12,12 +12,12 @@ export class NumbersListComponent implements OnInit {
   constructor(private numbers: NumberService) { }
 
   ngOnInit(): void {
-    this.numbers.process()
-    // console.log("backed")
+    // console.log(this.numbers.process())
+    // console.log(this.numbers.process())
+    // console.log(this.numbers.process())
     // console.log(this.backend.getNumbers())
-    // this.backend.getNumbers().subscribe(resp=>{
-    //   console.log(resp)
-    // })
+
+    this.numbers.process().subscribe(console.log)
   }
 
 }

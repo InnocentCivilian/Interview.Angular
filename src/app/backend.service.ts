@@ -21,10 +21,14 @@ export class BackendService {
       catchError(()=>{throw new FatalServerError("error while getting numbers.json")})
     );
   }
-  getOperation(name:string): Observable<OperationValue> {
-    return this.http.get<OperationValue>(`./assets/jsons/${name}.json`, { responseType: 'json' })
+  getOperation(item:NumberActionPair): Observable<NumberActionPair> {
+    return this.http.get<OperationValue>(`./assets/jsons/${item.action}.json`, { responseType: 'json' })
     .pipe(
-      catchError(()=>{throw new MissingOperationServerError(`error while getting ${name}.json`)})
-    );
+      catchError(()=>{throw new MissingOperationServerError(`error while getting ${item.action}.json`)}),
+      map(result=>{
+        return {value:item.value,action:item.action,second:result.value} as NumberActionPair
+      })
+    )
+    ;
   }
 }

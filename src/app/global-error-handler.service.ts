@@ -23,6 +23,7 @@ export class GlobalErrorHandlerService implements ErrorHandler {
         this._snackBar.open("MISSING DATA", "Dismiss");
         break;
       default:
+        console.error(error)
         this._snackBar.open("Unhandled error", "Dismiss");
 
     }
