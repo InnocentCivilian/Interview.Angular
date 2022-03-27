@@ -11,6 +11,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
 import { MathOperatorPipe } from './math-operator.pipe';
 import { MathResultPipe } from './math-result.pipe';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { MathResultPipe } from './math-result.pipe';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatListModule,
+    MatCardModule,
+
 
   ],
   providers: [
