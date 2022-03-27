@@ -8,18 +8,25 @@ import { NumbersListComponent } from './numbers-list/numbers-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import  {GlobalErrorHandlerService} from './global-error-handler.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatListModule} from '@angular/material/list';
+import { MathOperatorPipe } from './math-operator.pipe';
+import { MathResultPipe } from './math-result.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NumbersListComponent
+    NumbersListComponent,
+    MathOperatorPipe,
+    MathResultPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule,
+
   ],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandlerService },

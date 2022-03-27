@@ -1,1 +1,5 @@
-<p>numbers-list works!</p>
+<mat-list role="list">
+    <mat-list-item class="myRow" *ngFor="let pair of numbers" role="listitem">{{pair?.value}}
+        {{pair?.action|mathOperator}} {{pair?.second}}
+        = {{pair|mathResult}}</mat-list-item>
+</mat-list>

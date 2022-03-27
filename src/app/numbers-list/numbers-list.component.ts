@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs/internal/observable/from';
+import { toArray } from 'rxjs/internal/operators/toArray';
+import { mergeMap } from 'rxjs/operators';
 import { BackendService } from '../backend.service';
-import { NumberService } from '../number.service';
+import { NumberActionPair } from '../models/numberoperaionpair.model';
 
 @Component({
   selector: 'app-numbers-list',
@@ -9,15 +12,17 @@ import { NumberService } from '../number.service';
 })
 export class NumbersListComponent implements OnInit {
 
-  constructor(private numbers: NumberService) { }
+  numbers: NumberActionPair[] = [];
+  constructor(private backend:BackendService) { }
 
   ngOnInit(): void {
-    // console.log(this.numbers.process())
-    // console.log(this.numbers.process())
-    // console.log(this.numbers.process())
-    // console.log(this.backend.getNumbers())
-
-    this.numbers.process().subscribe(console.log)
+    this.backend.getNumbers().subscribe(numbers => {
+      from(numbers)
+        .pipe(
+          mergeMap((item: NumberActionPair) => (this.backend.getOperation(item))),
+          toArray(),
+        ).subscribe(result=>this.numbers.push(...result))
+    })
   }
 
 }
