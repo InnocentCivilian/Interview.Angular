@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../backend.service';
+import { NumberService } from '../number.service';
 
 @Component({
   selector: 'app-numbers-list',
@@ -8,14 +9,15 @@ import { BackendService } from '../backend.service';
 })
 export class NumbersListComponent implements OnInit {
 
-  constructor(private backend: BackendService) { }
+  constructor(private numbers: NumberService) { }
 
   ngOnInit(): void {
-    console.log("backed")
-    console.log(this.backend.getNumbers())
-    this.backend.getNumbers().subscribe(resp=>{
-      console.log(resp)
-    })
+    this.numbers.process()
+    // console.log("backed")
+    // console.log(this.backend.getNumbers())
+    // this.backend.getNumbers().subscribe(resp=>{
+    //   console.log(resp)
+    // })
   }
 
 }
