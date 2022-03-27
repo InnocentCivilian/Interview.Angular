@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FatalServerError } from './models/fatalservererror.model';
+import { MissingOperationServerError } from './models/missingoperationservererror.model';
 
 
 
@@ -18,11 +19,12 @@ export class GlobalErrorHandlerService implements ErrorHandler {
       case error instanceof FatalServerError:
         this._snackBar.open("Server Error", "Dismiss");
         break;
+      case error instanceof MissingOperationServerError:
+        this._snackBar.open("MISSING DATA", "Dismiss");
+        break;
+      default:
+        this._snackBar.open("Unhandled error", "Dismiss");
+
     }
-    // this._snackBar.open("Server Error", "Dismiss");
-    // console.log(error instanceof FatalServerError);
-    // console.log(typeof error);
-    // console.log(typeof error == typeof HttpErrorResponse);
-    // alert(error);
   }
 }

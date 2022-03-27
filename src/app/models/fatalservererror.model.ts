@@ -1,7 +1,6 @@
 
 export class FatalServerError extends Error {
 
-    httpStatus?: number = 404;
     applicationStatus?: number;
     handled: boolean = false;
   
