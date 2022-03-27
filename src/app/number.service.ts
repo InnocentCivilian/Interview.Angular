@@ -7,7 +7,6 @@ import { NumberActionPair } from './models/numberoperaionpair.model';
 })
 
 export class NumberService {
-  constructor(private backend: BackendService) { }
   calculate(item:NumberActionPair):number{
     switch (item.action) {
       case "add":
@@ -15,7 +14,7 @@ export class NumberService {
       case "multiply":
         return item.value * item.second;
         default:
-          throw Error
+          throw new Error("invalid action")
     }
   }
 }
