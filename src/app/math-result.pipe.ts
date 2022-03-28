@@ -6,7 +6,7 @@ import { NumberService } from './number.service';
   name: 'mathResult'
 })
 export class MathResultPipe implements PipeTransform {
-  constructor(private numbers: NumberService) {
+  constructor(public numbers: NumberService) {
        
   }
   transform(item: NumberActionPair, ...args: unknown[]): number {

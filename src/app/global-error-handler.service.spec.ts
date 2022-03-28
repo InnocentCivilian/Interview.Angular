@@ -27,18 +27,18 @@ describe('GlobalErrorHandlerService', () => {
     expect(service).toBeTruthy();
   });
   it('unknown error thrown snack bar should be called', () => {
-    spyOn(service._snackBar,"open").and.callThrough();
+    spyOn(service.snackBar,"open").and.callThrough();
     service.handleError(new Error());
-    expect(service._snackBar.open).toHaveBeenCalled();
+    expect(service.snackBar.open).toHaveBeenCalled();
   });
   it('FatalServerError thrown snack bar should be called', () => {
-    spyOn(service._snackBar,"open").and.callThrough();
+    spyOn(service.snackBar,"open").and.callThrough();
     service.handleError(new FatalServerError());
-    expect(service._snackBar.open).toHaveBeenCalled();
+    expect(service.snackBar.open).toHaveBeenCalled();
   });
   it('MissingOperationServerError thrown snack bar should be called', () => {
-    spyOn(service._snackBar,"open").and.callThrough();
+    spyOn(service.snackBar,"open").and.callThrough();
     service.handleError(new MissingOperationServerError());
-    expect(service._snackBar.open).toHaveBeenCalled();
+    expect(service.snackBar.open).toHaveBeenCalled();
   });
 });

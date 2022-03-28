@@ -11,18 +11,18 @@ import { MissingOperationServerError } from './models/missingoperationservererro
 
 export class GlobalErrorHandlerService implements ErrorHandler {
 
-  constructor(public _snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar) { }
 
   handleError(error: any): void {
     switch (true) {
       case error instanceof FatalServerError:
-        this._snackBar.open("Server Error", "Dismiss");
+        this.snackBar.open("Server Error", "Dismiss");
         break;
       case error instanceof MissingOperationServerError:
-        this._snackBar.open("MISSING DATA", "Dismiss");
+        this.snackBar.open("MISSING DATA", "Dismiss");
         break;
       default:
-        this._snackBar.open("Unhandled error", "Dismiss");
+        this.snackBar.open("Unhandled error", "Dismiss");
 
     }
   }
