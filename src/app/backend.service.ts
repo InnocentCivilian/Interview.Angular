@@ -22,7 +22,6 @@ export class BackendService {
     );
   }
   getOperation(item:NumberActionPair): Observable<NumberActionPair> {
-    console.log("==========",this.http)
     return this.http.get<OperationValue>(`./assets/jsons/${item.action}.json`, { responseType: 'json' })
     .pipe(
       catchError(()=>{throw new MissingOperationServerError(`error while getting ${item.action}.json`)}),
