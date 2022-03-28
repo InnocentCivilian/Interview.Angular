@@ -12,7 +12,7 @@ export class MathOperatorPipe implements PipeTransform {
       case "multiply":
         return "*"
         default:
-          throw Error
+          throw new Error();
     }
   }
 
