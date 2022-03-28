@@ -5,15 +5,9 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "test": "ng test --browsers ChromeCustom",
+        "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "clean": "rimraf ./dist",
-        "build:prod": "ng build --prod",
-        "make:badge": "make-coverage-badge --report-path=./coverage/stslib/coverage-summary.json --output-path=badges/coverage.svg",
-        "test:ci": "npm run clean && ng test --watch=false --codeCoverage=true && npm run make:badge",
-        "build:ci": "npm run clean && npm run build:prod",
-        "publish:lib": "cd dist && cd stslib && npm publis"
+        "e2e": "ng e2e"
     },
     "private": true,
     "dependencies": {
