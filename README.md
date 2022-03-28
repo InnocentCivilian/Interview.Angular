@@ -1,5 +1,5 @@
-[![build-test](https://github.com/emibcn/clover-coverage-badges-action/workflows/build-test/badge.svg)](https://github.com/InnocentCivilian/Interview.Angular/actions?query=workflow%3Abuild-test)
-[![build-test](https://raw.githubusercontent.com/emibcn/clover-coverage-badges-action/master/.github/badges/coverage.svg)](https://raw.githubusercontent.com/emibcn/clover-coverage-badges-action/master/.github/badges/coverage.svg)
+[![build-test](https://github.com/InnocentCivilian/Interview.Angular/workflows/build-test/badge.svg)](https://github.com/InnocentCivilian/Interview.Angular/actions?query=workflow%3Abuild-test)
+[![build-test](https://raw.githubusercontent.com/InnocentCivilian/Interview.Angular/master/.github/badges/coverage.svg)](https://raw.githubusercontent.com/emibcn/clover-coverage-badges-action/master/.github/badges/coverage.svg)
 
 # AngularInterview
 
