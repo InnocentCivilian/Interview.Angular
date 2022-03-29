@@ -12,8 +12,10 @@ import { NumberActionPair } from '../models/numberoperaionpair.model';
 })
 export class NumbersListComponent implements OnInit {
 
-  numbers: NumberActionPair[] = [];
-  constructor(private backend:BackendService) { }
+  public numbers: NumberActionPair[] = [];
+
+
+  constructor(private backend: BackendService) { }
 
   ngOnInit(): void {
     this.backend.getNumbers().subscribe(numbers => {
@@ -21,7 +23,7 @@ export class NumbersListComponent implements OnInit {
         .pipe(
           mergeMap((item: NumberActionPair) => (this.backend.getOperation(item))),
           toArray(),
-        ).subscribe(result=>this.numbers.push(...result))
+        ).subscribe(result => this.numbers = result)
     })
   }
 

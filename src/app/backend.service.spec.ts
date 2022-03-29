@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { BackendService } from './backend.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NumberActionPair } from './models/numberoperaionpair.model';
-import { MissingOperationServerError } from './models/missingoperationservererror.model';
 import { HttpClient } from '@angular/common/http';
 import { createSpyFromClass, Spy } from 'jasmine-auto-spies';
 
@@ -16,16 +14,8 @@ describe('BackendService', () => {
   let second: number = 3;
   let add: NumberActionPair = { value: first, second: second, action: "add" } as NumberActionPair
   let multiply: NumberActionPair = { value: first, second: second, action: "multiply" } as NumberActionPair
-  let invalid: NumberActionPair = { value: first, second: second, action: "lorem" } as NumberActionPair
 
   beforeEach(() => {
-    // TestBed.configureTestingModule({
-    //   imports: [HttpClientTestingModule],
-    //   providers: [BackendService]
-    // });
-    // service = TestBed.inject(BackendService);
-    // httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    // service = new BackendService(new HttpClient());
     TestBed.configureTestingModule({
       providers: [
         BackendService,
