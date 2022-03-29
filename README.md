@@ -6,22 +6,37 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running code coverage analysis
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng test --no-watch --code-coverage` to export a code coverage report (both brief and full analysis in html format)
 
-## Further help
+latest code coverate summary is as follows:
+```
+=============================== Coverage summary ===============================
+Statements   : 94.54% ( 52/55 )
+Branches     : 100% ( 9/9 )
+Functions    : 84.21% ( 16/19 )
+Lines        : 93.75% ( 45/48 )
+================================================================================
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Files
+
+### models/* 
+Models used in this sample application
+### number list
+A component which used to display program results
+### Backend Service
+A service which provides the capability to load json files
+## Number Service
+A service with single function which calculate result of two opreands and a single operator ( called action in this context)
+## Global Error Handler
+handles any thrown errors and display material snackbar based on them
+## Math Operator Pipe
+converts add to + and multiply to *
+## Math Result Pipe
+Calls Number Service ( used for readability  in html template)

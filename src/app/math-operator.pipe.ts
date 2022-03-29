@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MathOperatorPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: any, ...args: unknown[]): string {
     switch (value) {
       case "add":
         return "+";
